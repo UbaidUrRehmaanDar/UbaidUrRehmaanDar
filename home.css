@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.topbar {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: #2d2d2d;
+    align-items: center;
+    width: 100%;
+    padding: 1px 20px;
+    box-sizing: border-box;
+}
+
+.anchors {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.anchors a {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.2s ease-in-out;
+}
+
+.anchors a:hover {
+    color: #949494;
+}
+
+.Mid {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: baseline;
+    color: white;
+    background-color: #1f2020;
+}
+
+.Text {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 100px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.Text2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: -180px;
+    margin-top: 350px;
+    opacity: 0.8;
+}
+
+.Explore,
+.Play {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    margin: 10px;
+}
+
+.Explore {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    background-color: #f0f0f0;
+    color: #1f2020;
+    position: relative;
+    top: 460px;
+    left: -610px;
+    height: 20px;
+    width: 128px;
+}
+
+.Explore:hover {
+    font-family: 'Inter', sans-serif;
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+}
+
+.Play {
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    top: 457px;
+    left: -610px;
+    height: 30px;
+    width: 146px;
+}
+
+.Play.material-icons {
+    margin-right: 5px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.Play:hover {
+    transform: scale(1.02);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f2020;
+}
