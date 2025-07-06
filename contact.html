@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Portfolio</title>
-    <link rel="stylesheet" href="about.css" />
-    <script src="main.js" defer></script>
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 </head>
 <body>
     <div class="topbar">
         <h3>Obaid Ur Rehman</h3>
         <div class="anchors">
-            <a href="home.html"><span>Home</span></a>
-            <a href="projects.html"><span>Projects</span></a>
-            <a href="skills.html"><span>Skills</span></a>
-            <a href="contact.html"><span>Contact</span></a>
-            <a href="about.html"><span>About</span></a>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a class="active" href="contact.html">Contact</a>
+            <a href="about.html">About</a>
         </div>
     </div>
-    <div class="Texts">
-        <h1>Contact</h1>
-        <hr>
-        <div class="TextContainer" style="flex-direction:column;gap:36px;">
-            <form id="contactForm" style="display:flex;flex-direction:column;width:350px;gap:12px;">
-                <input type="text" id="name" placeholder="Your Name" required />
-                <input type="email" id="email" placeholder="Your Email" required />
-                <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit" style="background:#2d2d2d;color:white;font-weight:bold;padding:10px 0;">Send</button>
-            </form>
-            <div id="contactSuccess" style="display:none;color:lightgreen;font-weight:bold;margin-top:20px;">
-                Message sent! I'll get back to you soon.
+    <div class="Mid" style="flex-direction:column;gap:0;">
+        <div class="content" style="align-items:center;">
+            <div class="Text">
+                <h1>Contact Me</h1>
+                <hr />
+            </div>
+            <div class="Text2" style="margin-bottom:0;">
+                <p>You can reach me at:</p>
+                <ul style="list-style:none;padding:0;margin:10px 0 0 0;">
+                    <li><b>Email:</b> ubaidurrehmaan2004@gmail.com</li>
+                    <li><b>Phone:</b> 03404835034</li>
+                    <li><b>Location:</b> Lahore, Pakistan</li>
+                </ul>
+                <p style="margin-top:18px;">
+                    Or use the form below:
+                </p>
+                <form style="display:flex; flex-direction:column; gap:10px; width:100%; max-width:320px; margin:0 auto;">
+                    <input type="text" placeholder="Your Name" required style="padding:10px; border:1px solid #000; border-radius:4px;">
+                    <input type="email" placeholder="Your Email" required style="padding:10px; border:1px solid #000; border-radius:4px;">
+                    <textarea placeholder="Your Message" rows="4" required style="padding:10px; border:1px solid #000; border-radius:4px;"></textarea>
+                    <button type="submit" class="Explore" style="width:100%;">Send</button>
+                </form>
             </div>
         </div>
     </div>
