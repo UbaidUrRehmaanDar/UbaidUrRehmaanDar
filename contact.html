@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="about.css" />
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="topbar">
+        <h3>Obaid Ur Rehman</h3>
+        <div class="anchors">
+            <a href="home.html"><span>Home</span></a>
+            <a href="projects.html"><span>Projects</span></a>
+            <a href="skills.html"><span>Skills</span></a>
+            <a href="contact.html"><span>Contact</span></a>
+            <a href="about.html"><span>About</span></a>
+        </div>
+    </div>
+    <div class="Texts">
+        <h1>Contact</h1>
+        <hr>
+        <div class="TextContainer" style="flex-direction:column;gap:36px;">
+            <form id="contactForm" style="display:flex;flex-direction:column;width:350px;gap:12px;">
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="email" id="email" placeholder="Your Email" required />
+                <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit" style="background:#2d2d2d;color:white;font-weight:bold;padding:10px 0;">Send</button>
+            </form>
+            <div id="contactSuccess" style="display:none;color:lightgreen;font-weight:bold;margin-top:20px;">
+                Message sent! I'll get back to you soon.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
