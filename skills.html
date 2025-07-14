@@ -6,6 +6,241 @@
     <title>Skills | Portfolio</title>
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <style>
+        /* Additional animations and responsive styles */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .skills-container {
+            animation: fadeInUp 0.8s ease-out;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .skill-card {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            animation: slideIn 0.6s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-color: #333;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card h3 {
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+            position: relative;
+        }
+
+        .skill-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+
+        .skill-card:hover h3::after {
+            width: 100%;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .skill-list li:hover {
+            padding-left: 10px;
+            border-bottom-color: #000;
+        }
+
+        .skill-list li b {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .info-card {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+
+        .info-card h3 {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+
+        .info-card p {
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .languages-card {
+            background: #f8f9fa;
+            border-left: 4px solid #000;
+        }
+
+        .focus-card {
+            background: #f0f8ff;
+            border-left: 4px solid #000;
+        }
+
+        .competency-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .competency-list li {
+            margin: 10px 0;
+            padding: 6px 0;
+            color: #333;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .competency-list li::before {
+            content: '▶';
+            color: #000;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .competency-list li:hover::before {
+            transform: translateX(3px);
+        }
+
+        .competency-list li:hover {
+            color: #000;
+            padding-left: 8px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .skill-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .info-card {
+                padding: 16px;
+                margin: 16px 0;
+            }
+
+            .skills-container {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-card {
+                padding: 16px;
+            }
+
+            .skill-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .info-card {
+                padding: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="topbar">
@@ -18,19 +253,47 @@
             <a href="about.html">About</a>
         </div>
     </div>
-    <div class="Mid" style="flex-direction:column;gap:0;">
-        <div class="content" style="align-items:center;">
+    <div class="Mid" style="flex-direction:column;gap:0;padding:20px 0;">
+        <div class="content" style="align-items:center;max-width:none;width:100%;">
             <div class="Text">
                 <h1>My Skills</h1>
                 <hr />
             </div>
-            <div class="Text2" style="margin-bottom:0;">
-                <ul style="list-style:none;padding:0;margin:0;">
-                    <li><b>Languages:</b> HTML, CSS, JavaScript, Python, C++</li>
-                    <li><b>Web Development:</b> Responsive Design, DOM Manipulation, Git & GitHub</li>
-                    <li><b>Frameworks:</b> Bootstrap, React (basics)</li>
-                    <li><b>Other:</b> Problem Solving, Teamwork, Fast Learner</li>
-                </ul>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li><b>Frontend:</b> HTML, CSS, JavaScript</li>
+                            <li><b>Frameworks:</b> React.js (Basic), React Native (Learning)</li>
+                            <li><b>Backend:</b> Node.js, MongoDB (MERN Stack)</li>
+                            <li><b>Programming:</b> Java, Java Swing, C++</li>
+                            <li><b>Tools:</b> Git & GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Core Competencies</h3>
+                        <ul class="competency-list">
+                            <li>Front-End Web Design</li>
+                            <li>UI/UX Creativity</li>
+                            <li>Responsive Design</li>
+                            <li>Quick Learner & Creative Thinker</li>
+                            <li>Problem Solving</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="info-card languages-card">
+                    <h3>Languages</h3>
+                    <p><b>English</b> • <b>Urdu</b></p>
+                </div>
+                
+                <div class="info-card focus-card">
+                    <h3>Current Focus</h3>
+                    <p>
+                        Actively learning React Native for mobile app development and seeking internship opportunities to apply front-end skills in a collaborative environment.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

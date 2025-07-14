@@ -4,30 +4,228 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explore - Portfolio</title>
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <script src="main.js" defer></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .explore-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .explore-card {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .explore-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .explore-card h3 {
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+
+        .explore-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .explore-card li {
+            margin: 12px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .explore-card li:hover {
+            padding-left: 10px;
+            border-bottom-color: #000;
+        }
+
+        .explore-card li a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .explore-card li a:hover {
+            color: #333;
+        }
+
+        .explore-card li::before {
+            content: '→';
+            color: #000;
+            font-weight: bold;
+            margin-right: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .explore-card li:hover::before {
+            transform: translateX(3px);
+        }
+
+        .internship-banner {
+            background: #f8f9fa;
+            border: 2px solid #000;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .internship-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .internship-banner h3 {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+        }
+
+        .internship-banner p {
+            color: #333;
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        .internship-banner a {
+            color: #000;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .welcome-text {
+            color: #000;
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .explore-container {
+                padding: 15px;
+            }
+
+            .explore-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .explore-card {
+                padding: 20px;
+            }
+
+            .explore-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .internship-banner {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .explore-card {
+                padding: 16px;
+            }
+
+            .explore-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .internship-banner {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="topbar">
-        <h3>Obaid Ur Rehman</h3>
+        <h3>Ubaid Ur Rehmaan Dar</h3>
         <div class="anchors">
-            <a href="home.html"><span>Home</span></a>
+            <a href="index.html"><span>Home</span></a>
             <a href="projects.html"><span>Projects</span></a>
             <a href="skills.html"><span>Skills</span></a>
             <a href="contact.html"><span>Contact</span></a>
             <a href="about.html"><span>About</span></a>
         </div>
     </div>
-    <div class="Texts" style="justify-content:center;">
-        <h1>Explore</h1>
-        <hr>
-        <div class="TextContainer" style="flex-direction:column;gap:36px;">
-            <p>Use this area to explore my work, skills, and journey in tech!</p>
-            <ul>
-                <li><a href="projects.html">See my Projects</a></li>
-                <li><a href="skills.html">View my Skills</a></li>
-                <li><a href="about.html">Learn About Me</a></li>
-            </ul>
+    <div class="Mid" style="flex-direction:column;gap:0;padding:20px 0;">
+        <div class="content" style="align-items:center;max-width:none;width:100%;">
+            <div class="Text">
+                <h1>Explore</h1>
+                <hr />
+            </div>
+            <div class="explore-container">
+                <p class="welcome-text">Explore my journey as a 4th semester Computer Science student passionate about web and mobile development!</p>
+                
+                <div class="explore-grid">
+                    <div class="explore-card">
+                        <h3><i class="material-icons" style="vertical-align:middle;margin-right:8px;">code</i>Current Projects</h3>
+                        <ul>
+                            <li><a href="projects.html">Chakras Music Player (MERN)</a></li>
+                            <li><a href="projects.html">Smart City Dashboard (React)</a></li>
+                            <li><a href="projects.html">Personal Portfolio</a></li>
+                            <li><a href="projects.html">Java Swing Applications</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="explore-card">
+                        <h3><i class="material-icons" style="vertical-align:middle;margin-right:8px;">trending_up</i>Learning Focus</h3>
+                        <ul>
+                            <li>React Native for Mobile Development</li>
+                            <li>Advanced React.js Concepts</li>
+                            <li>Full-Stack MERN Development</li>
+                            <li>UI/UX Design Principles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="internship-banner">
+                    <h3><i class="material-icons" style="vertical-align:middle;margin-right:8px;">work_outline</i>Seeking Internship Opportunities</h3>
+                    <p>
+                        Available full-time during vacations and part-time/remote during semester. 
+                        <a href="contact.html">Get in touch!</a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </body>

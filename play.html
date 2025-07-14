@@ -4,27 +4,285 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Play - Portfolio</title>
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <script src="main.js" defer></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        body {
+            background: #fff;
+            color: #000;
+        }
+
+        .play-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .interactive-section {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .interactive-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .motivation-button {
+            background: #000;
+            color: white;
+            font-weight: bold;
+            padding: 16px 32px;
+            width: 280px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .motivation-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background: #333;
+        }
+
+        .motivation-button:active {
+            transform: translateY(0);
+            animation: pulse 0.3s ease;
+        }
+
+        .result-display {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            min-height: 50px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .fact-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .fact-icon {
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .fact-text {
+            color: #000;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: #000;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .welcome-text {
+            color: #000;
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .play-header {
+            color: #000;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .play-header hr {
+            border: none;
+            border-top: 2.5px solid #000;
+            width: 60px;
+            margin: 10px auto;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .play-container {
+                padding: 15px;
+            }
+
+            .interactive-section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .motivation-button {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            .fact-card {
+                padding: 16px;
+            }
+
+            .fact-icon {
+                font-size: 20px;
+            }
+
+            .fact-text {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .facts-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .interactive-section {
+                padding: 16px;
+            }
+
+            .motivation-button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="topbar">
-        <h3>Obaid Ur Rehman</h3>
+        <h3>Ubaid Ur Rehmaan Dar</h3>
         <div class="anchors">
-            <a href="home.html"><span>Home</span></a>
+            <a href="index.html"><span>Home</span></a>
             <a href="projects.html"><span>Projects</span></a>
             <a href="skills.html"><span>Skills</span></a>
             <a href="contact.html"><span>Contact</span></a>
             <a href="about.html"><span>About</span></a>
         </div>
     </div>
-    <div class="Texts" style="justify-content:center;">
-        <h1>Play</h1>
-        <hr>
-        <div class="TextContainer" style="flex-direction:column;gap:36px;">
-            <p>This is a fun interactive page! Click the button below to see what happens.</p>
-            <button id="funButton" style="background:#2d2d2d;color:white;font-weight:bold;padding:10px 0;width:200px;">Click me!</button>
-            <div id="funResult" style="font-size: 24px; color: orange; margin-top: 20px; font-weight:bold;"></div>
+    <div class="Mid" style="flex-direction:column;gap:0;padding:20px 0;">
+        <div class="content" style="align-items:center;max-width:none;width:100%;">
+            <div class="Text">
+                <h1>Play</h1>
+                <hr />
+            </div>
+            <div class="play-container">
+                <p class="welcome-text">Welcome to my interactive playground! Here's some fun while you explore my portfolio.</p>
+                
+                <div class="interactive-section">
+                    <div style="display:flex;flex-direction:column;gap:20px;align-items:center;">
+                        <button id="funButton" class="motivation-button">
+                            <i class="material-icons" style="vertical-align:middle;margin-right:8px;">psychology</i>
+                            Click for Motivation!
+                        </button>
+                        <div id="funResult" class="result-display"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <p class="section-title">Quick Facts About Me:</p>
+                    <div class="facts-grid">
+                        <div class="fact-card">
+                            <i class="material-icons fact-icon">school</i>
+                            <span class="fact-text">4th Semester CS Student</span>
+                        </div>
+                        <div class="fact-card">
+                            <i class="material-icons fact-icon">flash_on</i>
+                            <span class="fact-text">Fast Learner</span>
+                        </div>
+                        <div class="fact-card">
+                            <i class="material-icons fact-icon">palette</i>
+                            <span class="fact-text">Creative Thinker</span>
+                        </div>
+                        <div class="fact-card">
+                            <i class="material-icons fact-icon">work</i>
+                            <span class="fact-text">Seeking Internship</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
